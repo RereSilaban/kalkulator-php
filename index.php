@@ -32,7 +32,7 @@
             case 'kali':   $hasil = $n1 * $n2; break;
             case 'bagi':   $hasil = ($n2 != 0) ? $n1 / $n2 : "Error: Bagi Nol"; break;
         }
-        echo "<h3>$n1  $op  $n2</h3>";
+        echo "Pertanyaan: <h3>$n1  $op  $n2</h3>";
         echo "<h3>Hasil: $hasil</h3>";
     }
     ?>

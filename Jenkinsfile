@@ -10,7 +10,7 @@ pipeline {
             steps {
                 echo 'Menjalankan Server Kalkulator...'
                 // Perintah ini menyalakan server PHP di port 8000
-                bat "start /B php -S localhost:8000"
+                bat 'start /B C:\\xampp\\php\\php.exe -S localhost:8000'
             }
         }
         // stage('Performance Test') {
@@ -19,6 +19,6 @@ pipeline {
         //         // Di sini nanti tempat kamu panggil file .jmx
         //         echo 'Testing selesai!'
         //     }
-        // }
+        }
     }
 }

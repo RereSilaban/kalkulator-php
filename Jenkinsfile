@@ -8,9 +8,21 @@ pipeline {
         }
         stage('Deploy') {
             steps {
-                echo 'Menjalankan Server Kalkulator...'
-                // Perintah ini menyalakan server PHP di port 8000
-                bat 'start /B C:\\xampp\\php\\php.exe -S 172.16.15.3:8000'
+                echo 'Membersihkan proses lama dan menjalankan server...'
+                bat "taskkill /F /IM php.exe /T || echo Tidak ada proses PHP sebelumnya."
+                
+                // Menjalankan server baru
+                bat 'start /B C:\\xampp\\php\\php.exe -S localhost:8000'
+                
+                echo 'Menunggu server stabil (5 detik)...'
+                sleep 5
+            }
+        }
+        stage('Verify Deploy') {
+            steps {
+                echo 'Memastikan server merespon dengan benar...'
+                // Perintah ini akan mencoba mengambil isi halaman localhost:8000
+                bat 'curl -I http://localhost:8000'
             }
         }
         // stage('Performance Test') {

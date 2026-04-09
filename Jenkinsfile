@@ -19,6 +19,6 @@ pipeline {
         //         // Di sini nanti tempat kamu panggil file .jmx
         //         echo 'Testing selesai!'
         //     }
-        }
+        //}
     }
 }
